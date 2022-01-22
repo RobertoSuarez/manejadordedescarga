@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         getDataFile();
 
-        linearLayout = findViewById(R.id.containerList);
+
 
         listView = (RecyclerView) findViewById(R.id.listview);
         listView.setLayoutManager(new LinearLayoutManager(this));
