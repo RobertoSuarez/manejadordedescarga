@@ -45,7 +45,7 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.ViewHolderDato
         }
 
         public void asignarDatos(FileImagen s) {
-            filename.setText(s.getName());
+            filename.setText(s.getTitulo());
         }
     }
 }

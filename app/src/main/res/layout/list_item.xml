@@ -7,19 +7,12 @@
 
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Titulo: "
-        android:textSize="34sp"
-        android:textStyle="bold" />
-
-    <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nombre"
-        android:textSize="20sp" />
+        android:textStyle="bold"
+        android:textSize="34sp" />
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"

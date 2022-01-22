@@ -60,13 +60,13 @@ public class MainActivity extends AppCompatActivity {
                 requestPermissions(new String[]{ Manifest.permission.WRITE_EXTERNAL_STORAGE}, request_code);
 
 
-        MaterialButton bntDownload = (MaterialButton) findViewById(R.id.btndownload);
-        bntDownload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                downloadFile(urlImage, imagename);
-            }
-        });
+//        MaterialButton bntDownload = (MaterialButton) findViewById(R.id.btndownload);
+//        bntDownload.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                downloadFile(urlImage, imagename);
+//            }
+//        });
 
         getDataFile();
 
@@ -76,9 +76,8 @@ public class MainActivity extends AppCompatActivity {
         listView.setLayoutManager(new LinearLayoutManager(this));
 
         listData = new ArrayList<FileImagen>();
-        listData.add(new FileImagen(1, "imagen1", "url 1"));
-        listData.add(new FileImagen(2, "imagen3", "url 2"));
-        listData.add(new FileImagen(3, "imagen3", "url 3"));
+        listData.add(new FileImagen(1, "Arquitectura", "imagen.jpg", "lksjdflk"));
+
 
         adaptador = new AdapterData(listData);
         listView.setAdapter(adaptador);
@@ -92,20 +91,29 @@ public class MainActivity extends AppCompatActivity {
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
+                        ArrayList<FileImagen> list = new ArrayList<FileImagen>();
+
 
 
                         for (int i = 0; i < response.length(); i++) {
                             try {
                                 JSONObject datafile = response.getJSONObject(i);
-                                String name = datafile.getString("name");
-                                String data = datafile.getString("file");
-                                System.out.println(name + " : "+ data);
-                                listData.add(new FileImagen(datafile.getInt("id"), datafile.getString("name"), datafile.getString("file")));
+                                System.out.println(datafile.getString("titulo"));
+                                list.add(
+                                        new FileImagen(
+                                                datafile.getInt("id"),
+                                                datafile.getString("titulo"),
+                                                datafile.getString("name"),
+                                                datafile.getString("file")
+                                        )
+                                );
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
                         }
 
+                        AdapterData ad = new AdapterData(list);
+                        listView.setAdapter(ad);
 
                     }
                 },

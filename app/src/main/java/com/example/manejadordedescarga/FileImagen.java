@@ -7,8 +7,9 @@ public class FileImagen {
     public String file;
 
 
-    public FileImagen(int id, String name, String file) {
+    public FileImagen(int id, String titulo, String name, String file) {
         this.id = id;
+        this.titulo = titulo;
         this.name = name;
         this.file = file;
     }
