@@ -3,10 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingTop="25dp"
-    android:paddingRight="10dp"
     android:paddingLeft="10dp"
-    >
+    android:paddingTop="25dp"
+    android:paddingRight="10dp">
 
 
     <TextView
@@ -14,15 +13,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nombre"
-        android:textStyle="bold"
-        android:textSize="34sp" />
+        android:textSize="34sp"
+        android:textStyle="bold" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnDownload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Descargar"/>
+        android:text="Descargar" />
 
     <com.google.android.material.divider.MaterialDivider
         android:layout_width="match_parent"
